@@ -32,13 +32,13 @@ module IntuitOAuth
 
       if method == 'GET'
         response = HTTParty.get(url,
-          headers: req_headers
+          "headers" => req_headers
         )
 
       elsif method == 'POST'
         response = HTTParty.post(url,
-          headers: req_headers,
-          body: body
+          "headers" => req_headers,
+          "body" => body
         )
       end
 
