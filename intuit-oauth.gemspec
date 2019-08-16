@@ -4,9 +4,8 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
-  spec.add_dependency 'httparty', '~> 0.16.2'
+  spec.add_dependency 'httparty', '0.16.2'
   spec.add_dependency 'json', '~> 1.8'
-  spec.add_dependency 'json_web_token', '~> 0.3.5'
   spec.add_dependency 'rsa-pem-from-mod-exp', '~> 0.1.0'
 
   spec.authors       = ['Intuit Inc']
