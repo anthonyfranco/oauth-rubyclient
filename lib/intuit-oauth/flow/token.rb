@@ -34,15 +34,15 @@ module IntuitOAuth
         end
 
         headers = {
-          Accept: 'application/json',
+          "Accept" => 'application/json',
           "Content-Type" => 'application/x-www-form-urlencoded',
-          Authorization: IntuitOAuth::Utils.get_auth_header(@client.id, @client.secret)
+          "Authorization" => IntuitOAuth::Utils.get_auth_header(@client.id, @client.secret)
         }
 
         body = {
-          grant_type: 'authorization_code',
-          code: auth_code,
-          redirect_uri: @client.redirect_uri
+          "grant_type" => 'authorization_code',
+          "code" => auth_code,
+          "redirect_uri" =>  @client.redirect_uri
         }
 
         IntuitOAuth::Transport.request('POST', @client.token_endpoint, headers, URI.encode_www_form(body))
@@ -55,12 +55,12 @@ module IntuitOAuth
       def refresh_tokens(token)
         headers = {
           "Content-Type" => 'application/x-www-form-urlencoded',
-          Authorization: IntuitOAuth::Utils.get_auth_header(@client.id, @client.secret)
+          "Authorization" => IntuitOAuth::Utils.get_auth_header(@client.id, @client.secret)
         }
 
         body = {
-          grant_type: 'refresh_token',
-          refresh_token: token
+          "grant_type" => 'refresh_token',
+          "refresh_token" => token
         }
 
         IntuitOAuth::Transport.request('POST', @client.token_endpoint, headers, URI.encode_www_form(body))
@@ -73,11 +73,11 @@ module IntuitOAuth
       def revoke_tokens(token)
         headers = {
           "Content-Type" => 'application/json',
-          Authorization: IntuitOAuth::Utils.get_auth_header(@client.id, @client.secret)
+          "Authorization" => IntuitOAuth::Utils.get_auth_header(@client.id, @client.secret)
         }
 
         body = {
-          token: token
+          "token" => token
         }
 
         response = IntuitOAuth::Transport.request('POST', @client.revoke_endpoint, headers, body.to_json, false)
