@@ -27,7 +27,7 @@ module IntuitOAuth
       # @return [Response] the response object
       def get_user_info(access_token)
         headers = {
-          Authorization: "Bearer #{access_token}"
+          "Authorization" => "Bearer #{access_token}"
         }
 
         IntuitOAuth::Transport.request('GET', @client.user_info_url, headers=headers)
