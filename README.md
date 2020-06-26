@@ -1,3 +1,5 @@
+# Deprecated for https://github.com/BetterCater/oauth-rubyclient
+
 [![SDK Banner](views/SDK.png)](https://help.developer.intuit.com/s/SDKFeedback?cid=1130)
 
 # oauth-rubyclient
